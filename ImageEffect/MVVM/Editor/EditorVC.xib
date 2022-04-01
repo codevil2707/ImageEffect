@@ -32,13 +32,18 @@
                                     <rect key="frame" x="41.5" y="92.5" width="331" height="276.5"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="5DS-6D-cvU">
+                                <activityIndicatorView hidden="YES" contentMode="center" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="5DS-6D-cvU">
                                     <rect key="frame" x="188.5" y="212" width="37" height="37"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="color" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </activityIndicatorView>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="5DS-6D-cvU" firstAttribute="centerY" secondItem="EFp-XS-O3o" secondAttribute="centerY" id="7kD-mt-EBH"/>
+                                <constraint firstItem="5DS-6D-cvU" firstAttribute="centerX" secondItem="EFp-XS-O3o" secondAttribute="centerX" id="IPg-Tb-316"/>
+                                <constraint firstItem="5DS-6D-cvU" firstAttribute="height" secondItem="EFp-XS-O3o" secondAttribute="height" multiplier="0.0801733" id="Rh4-sf-zXL"/>
+                                <constraint firstItem="5DS-6D-cvU" firstAttribute="width" secondItem="EFp-XS-O3o" secondAttribute="width" multiplier="0.089372" id="VQy-x8-uXv"/>
+                            </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4D-UD-u62">
                             <rect key="frame" x="0.0" y="461.5" width="414" height="307.5"/>

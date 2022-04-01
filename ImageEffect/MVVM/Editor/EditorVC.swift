@@ -37,7 +37,12 @@ class EditorVC: NavigationsViewController {
             self?.imageView.image = image
             
         }
-      
+        editorVM?.bindFilterImage = { img in
+            DispatchQueue.main.async{
+            self.imageView.image = img
+            self.imageLoader.stopAnimating()
+            }
+        }
         editorVM?.filterImageBinder = {[weak self] image in
             DispatchQueue.main.async {
                 self?.imageLoader.stopAnimating()
@@ -82,9 +87,11 @@ class EditorVC: NavigationsViewController {
     //MARK: - Actions
     
     @IBAction func blurButtonClicked(sender:UIButton){
-        guard let filtersVM = editorVM?.createFilterVM() else {return}
-            let child = FiltersVC(filtersVM: filtersVM)
-            self.add(child, height: self.view.frame.height*0.4)
+//        self.imageView.bringSubviewToFront(imageLoader)
+        imageLoader.startAnimating()
+        DispatchQueue.global().async { [self] in
+            editorVM?.addFilter()
+        }
         
     }
 }

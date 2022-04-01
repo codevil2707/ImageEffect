@@ -12,12 +12,12 @@ import CoreImage.CIFilterBuiltins
 extension UIImage{
     
     ///read type of filter and returns filtered image with given value
-    func filteredImage(type: ImageFilter , value:CGFloat) -> UIImage?{
+    func filteredImage(type: ImageFilter? , value:CGFloat?) -> UIImage?{
         var filterImage : UIImage?
          switch(type){
-        case .Blur :   filterImage = boxBlurEffect(value)
+         case .Blur :   filterImage = boxBlurEffect(value ?? 80)
                      
-        case .SepiaTone : let filterImage = sepiaToneEffect(value)
+         case .SepiaTone : let filterImage = sepiaToneEffect(value ?? 60)
                         
         case .SharpenLuminance : let filterImage = sharpenLuminance()
                                   return filterImage
@@ -31,13 +31,15 @@ extension UIImage{
                              return filterImage
         case .ColorClamp : let filterImage = colorClampEffect()
                           return filterImage
-        case .ZoomBlur  : let filterImage = zoomBlurEffect(value)
+        case .ZoomBlur  : let filterImage = zoomBlurEffect(value ?? 40)
                          return filterImage
-        case .MotionBlur : let filterImage = motionBlurEffect(value)
+        case .MotionBlur : let filterImage = motionBlurEffect(value ?? 20)
                            return filterImage
-        case .Thresold  : let filterImage = thresoldEffect(value)
+        case .Thresold  : let filterImage = thresoldEffect(value ?? 30)
                       return filterImage
-        }
+         case .none:
+             return nil
+         }
       return filterImage
      
     }

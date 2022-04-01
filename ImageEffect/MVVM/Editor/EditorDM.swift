@@ -10,9 +10,10 @@ import UIKit
 
 class EditorDM{
     var image:UIImage?
-    var filterType = ImageFilter.allValues
+    var filterType:FilterInfo
     
-    init(image:UIImage){
+    init(image:UIImage,filterType:FilterInfo?){
         self.image = image
+        self.filterType = FilterInfo(filterType: .Blur, currentValue: 80, minValue: 0, maxValue: 100)
     }
 }

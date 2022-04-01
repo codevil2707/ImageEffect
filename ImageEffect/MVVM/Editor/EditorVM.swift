@@ -24,6 +24,7 @@ class EditorVM{
     var imageBinding : ((UIImage?) -> Void)?
     var filterImageBinder: ((UIImage?) -> Void)?
     var imageViewSizeBinder:((CGSize?) -> Void)?
+    var bindFilterImage:  ((UIImage?) -> Void)?
     func loadImageBind(){
         imageBinding?(editorDM.image)
     }
@@ -45,4 +46,9 @@ class EditorVM{
         return filtersVM
     }
     
+    func addFilter(){
+        let image = editorDM.image?.filteredImage(type: editorDM.filterType.filterType ?? nil, value: CGFloat(editorDM.filterType.filtervalue ?? 00))
+        bindFilterImage?(image)
+    }
 }
+

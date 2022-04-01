@@ -52,7 +52,7 @@ class RootViewModel {
     
     func createEditorVM()->EditorVM?{
         guard let image = rootModel.image else {return nil}
-        let dataModel = EditorDM(image: image)
+        let dataModel = EditorDM(image: image, filterType: nil)
         editorVM = EditorVM(editorDM: dataModel)
         return editorVM
     }
