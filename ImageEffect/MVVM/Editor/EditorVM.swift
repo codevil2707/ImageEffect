@@ -8,13 +8,34 @@
 import Foundation
 import UIKit
 
-class EditorVM{
+class EditorVM: SliderDelegate, FilterDelegate, TableDelegate, TimeStampDelegate{
+    func timeStampDelegate(text: String) {
+        bindLabel?(text)
+    }
+    
+    func tableDelegate(text: String) {
+        bindLabel?(text)
+    }
+    
+    func filterDelegate(text: String) {
+        bindLabel?(text)
+    }
+    
+    
+    func sliderValueChanged(_ text: String,value: Int) {
+        bindLabel?(text)
+        editorDM.currentValue = value
+    }
+    
     //MARK: - DM refrence
     let editorDM:EditorDM
     
     //MARK: - Variables
     var filtersVM:FiltersVM? = nil
-    
+    var sliderVM:SliderVM? = nil
+    var tableVM:TableVM? = nil
+    var timeStampVM:TimeStampVM? = nil
+   
     //MARK: - Initializer
     init(editorDM:EditorDM){
         self.editorDM = editorDM
@@ -27,7 +48,7 @@ class EditorVM{
     func loadImageBind(){
         imageBinding?(editorDM.image)
     }
-    
+    var bindLabel:((String)->Void)?
     //MARK: - Methods
     
     func addBlurFilter(){
@@ -42,7 +63,24 @@ class EditorVM{
    
     func createFilterVM()->FiltersVM?{
        filtersVM = FiltersVM()
+        filtersVM?.delegate = self
         return filtersVM
     }
     
+    func createSliderVM()->SliderVM?{
+     
+       sliderVM = SliderVM(currentDM: editorDM, self)
+       
+        return sliderVM
+    }
+    func createMyTableVM()->TableVM?{
+        tableVM = TableVM()
+        tableVM?.delegate = self
+        return tableVM
+    }
+    func createTimeStampVM()->TimeStampVM?{
+        timeStampVM = TimeStampVM()
+        timeStampVM?.delegate = self
+        return timeStampVM
+    }
 }

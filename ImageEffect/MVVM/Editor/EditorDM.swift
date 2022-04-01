@@ -11,8 +11,9 @@ import UIKit
 class EditorDM{
     var image:UIImage?
     var filterType = ImageFilter.allValues
-    
+    var currentValue = 40
     init(image:UIImage){
         self.image = image
+        
     }
 }

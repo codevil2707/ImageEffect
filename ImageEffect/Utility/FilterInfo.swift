@@ -12,3 +12,4 @@ struct FilterInfo{
     var filterType:[ImageFilter]?
     var filtervalue:CGFloat?
 }
+

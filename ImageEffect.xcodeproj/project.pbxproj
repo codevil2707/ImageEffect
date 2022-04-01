@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CD00841727F428D40015B0CB /* TimeStampVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00841527F428D40015B0CB /* TimeStampVC.swift */; };
+		CD00841827F428D40015B0CB /* TimeStampVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD00841627F428D40015B0CB /* TimeStampVC.xib */; };
+		CD00841A27F43FD60015B0CB /* TimeStampVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD00841927F43FD60015B0CB /* TimeStampVM.swift */; };
 		CD2851DD27E99F9400B94814 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2851DC27E99F9400B94814 /* AppDelegate.swift */; };
 		CD2851DF27E99F9400B94814 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2851DE27E99F9400B94814 /* SceneDelegate.swift */; };
 		CD2851E127E99F9400B94814 /* RootVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2851E027E99F9400B94814 /* RootVC.swift */; };
@@ -17,6 +20,15 @@
 		CD2851F327E9AB4700B94814 /* RootDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2851F227E9AB4700B94814 /* RootDM.swift */; };
 		CD2851FC27E9CFA100B94814 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2851FB27E9CFA100B94814 /* Enums.swift */; };
 		CD28520027E9E8CB00B94814 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2851FF27E9E8CB00B94814 /* Extensions.swift */; };
+		CDC711E927F1BE4A0047FE90 /* SliderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC711E727F1BE4A0047FE90 /* SliderVC.swift */; };
+		CDC711EA27F1BE4A0047FE90 /* SliderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC711E827F1BE4A0047FE90 /* SliderVC.xib */; };
+		CDC711EC27F1CBEE0047FE90 /* SliderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC711EB27F1CBEE0047FE90 /* SliderVM.swift */; };
+		CDC711EE27F1CBFD0047FE90 /* SliderDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC711ED27F1CBFD0047FE90 /* SliderDS.swift */; };
+		CDC711F227F2B7540047FE90 /* TableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC711F027F2B7540047FE90 /* TableVC.swift */; };
+		CDC711F327F2B7540047FE90 /* TableVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC711F127F2B7540047FE90 /* TableVC.xib */; };
+		CDC711F627F2BB560047FE90 /* MyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC711F427F2BB560047FE90 /* MyTableViewCell.swift */; };
+		CDC711F727F2BB560047FE90 /* MyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC711F527F2BB560047FE90 /* MyTableViewCell.xib */; };
+		CDC711F927F2BE600047FE90 /* TableVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC711F827F2BE600047FE90 /* TableVM.swift */; };
 		CDE9B1AB27EC7A3D00BB978A /* EditorDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE9B1AA27EC7A3D00BB978A /* EditorDM.swift */; };
 		CDE9B1AE27EC7A6C00BB978A /* EditorVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE9B1AC27EC7A6C00BB978A /* EditorVC.swift */; };
 		CDE9B1AF27EC7A6C00BB978A /* EditorVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDE9B1AD27EC7A6C00BB978A /* EditorVC.xib */; };
@@ -31,6 +43,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CD00841527F428D40015B0CB /* TimeStampVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStampVC.swift; sourceTree = "<group>"; };
+		CD00841627F428D40015B0CB /* TimeStampVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeStampVC.xib; sourceTree = "<group>"; };
+		CD00841927F43FD60015B0CB /* TimeStampVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeStampVM.swift; sourceTree = "<group>"; };
 		CD2851D927E99F9400B94814 /* ImageEffect.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImageEffect.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD2851DC27E99F9400B94814 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD2851DE27E99F9400B94814 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -43,6 +58,15 @@
 		CD2851F227E9AB4700B94814 /* RootDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootDM.swift; sourceTree = "<group>"; };
 		CD2851FB27E9CFA100B94814 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		CD2851FF27E9E8CB00B94814 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CDC711E727F1BE4A0047FE90 /* SliderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderVC.swift; sourceTree = "<group>"; };
+		CDC711E827F1BE4A0047FE90 /* SliderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderVC.xib; sourceTree = "<group>"; };
+		CDC711EB27F1CBEE0047FE90 /* SliderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderVM.swift; sourceTree = "<group>"; };
+		CDC711ED27F1CBFD0047FE90 /* SliderDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderDS.swift; sourceTree = "<group>"; };
+		CDC711F027F2B7540047FE90 /* TableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVC.swift; sourceTree = "<group>"; };
+		CDC711F127F2B7540047FE90 /* TableVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableVC.xib; sourceTree = "<group>"; };
+		CDC711F427F2BB560047FE90 /* MyTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTableViewCell.swift; sourceTree = "<group>"; };
+		CDC711F527F2BB560047FE90 /* MyTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTableViewCell.xib; sourceTree = "<group>"; };
+		CDC711F827F2BE600047FE90 /* TableVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVM.swift; sourceTree = "<group>"; };
 		CDE9B1AA27EC7A3D00BB978A /* EditorDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorDM.swift; sourceTree = "<group>"; };
 		CDE9B1AC27EC7A6C00BB978A /* EditorVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorVC.swift; sourceTree = "<group>"; };
 		CDE9B1AD27EC7A6C00BB978A /* EditorVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EditorVC.xib; sourceTree = "<group>"; };
@@ -67,6 +91,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CD00841427F428A60015B0CB /* Time Stamp */ = {
+			isa = PBXGroup;
+			children = (
+				CD00841527F428D40015B0CB /* TimeStampVC.swift */,
+				CD00841627F428D40015B0CB /* TimeStampVC.xib */,
+				CD00841927F43FD60015B0CB /* TimeStampVM.swift */,
+			);
+			path = "Time Stamp";
+			sourceTree = "<group>";
+		};
 		CD2851D027E99F9400B94814 = {
 			isa = PBXGroup;
 			children = (
@@ -127,6 +161,9 @@
 		CD2851F727E9B48D00B94814 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				CD00841427F428A60015B0CB /* Time Stamp */,
+				CDC711EF27F2B6830047FE90 /* My Table */,
+				CDC711E627F1BE1F0047FE90 /* Slider */,
 				CDE9B1B527EDF60300BB978A /* Filter */,
 				CDE9B1A927EC7A0600BB978A /* Editor */,
 				CD2851F627E9ADE000B94814 /* Root  */,
@@ -143,6 +180,29 @@
 				CDE9B1C527EF202E00BB978A /* FilterInfo.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		CDC711E627F1BE1F0047FE90 /* Slider */ = {
+			isa = PBXGroup;
+			children = (
+				CDC711E727F1BE4A0047FE90 /* SliderVC.swift */,
+				CDC711E827F1BE4A0047FE90 /* SliderVC.xib */,
+				CDC711EB27F1CBEE0047FE90 /* SliderVM.swift */,
+				CDC711ED27F1CBFD0047FE90 /* SliderDS.swift */,
+			);
+			path = Slider;
+			sourceTree = "<group>";
+		};
+		CDC711EF27F2B6830047FE90 /* My Table */ = {
+			isa = PBXGroup;
+			children = (
+				CDC711F827F2BE600047FE90 /* TableVM.swift */,
+				CDC711F027F2B7540047FE90 /* TableVC.swift */,
+				CDC711F127F2B7540047FE90 /* TableVC.xib */,
+				CDC711F427F2BB560047FE90 /* MyTableViewCell.swift */,
+				CDC711F527F2BB560047FE90 /* MyTableViewCell.xib */,
+			);
+			path = "My Table";
 			sourceTree = "<group>";
 		};
 		CDE9B1A927EC7A0600BB978A /* Editor */ = {
@@ -227,9 +287,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				CDE9B1C227EEF17100BB978A /* FiltersCollectionViewCell.xib in Resources */,
+				CDC711F727F2BB560047FE90 /* MyTableViewCell.xib in Resources */,
+				CDC711EA27F1BE4A0047FE90 /* SliderVC.xib in Resources */,
 				CDE9B1AF27EC7A6C00BB978A /* EditorVC.xib in Resources */,
 				CD2851E927E99FA100B94814 /* LaunchScreen.storyboard in Resources */,
+				CD00841827F428D40015B0CB /* TimeStampVC.xib in Resources */,
 				CD2851E627E99FA100B94814 /* Assets.xcassets in Resources */,
+				CDC711F327F2B7540047FE90 /* TableVC.xib in Resources */,
 				CD2851E427E99F9400B94814 /* Root.storyboard in Resources */,
 				CDE9B1B927EDF68F00BB978A /* FiltersVC.xib in Resources */,
 			);
@@ -242,21 +306,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CD00841A27F43FD60015B0CB /* TimeStampVM.swift in Sources */,
 				CDE9B1C627EF202E00BB978A /* FilterInfo.swift in Sources */,
 				CDE9B1B827EDF68F00BB978A /* FiltersVC.swift in Sources */,
 				CDE9B1AE27EC7A6C00BB978A /* EditorVC.swift in Sources */,
+				CDC711F927F2BE600047FE90 /* TableVM.swift in Sources */,
 				CDE9B1B427ED97DB00BB978A /* NavigationsViewController.swift in Sources */,
 				CD2851F327E9AB4700B94814 /* RootDM.swift in Sources */,
+				CDC711E927F1BE4A0047FE90 /* SliderVC.swift in Sources */,
 				CDE9B1C427EF18BA00BB978A /* FiltersVM.swift in Sources */,
 				CD2851E127E99F9400B94814 /* RootVC.swift in Sources */,
 				CDE9B1C127EEF17100BB978A /* FiltersCollectionViewCell.swift in Sources */,
 				CD2851DD27E99F9400B94814 /* AppDelegate.swift in Sources */,
 				CD28520027E9E8CB00B94814 /* Extensions.swift in Sources */,
+				CDC711F227F2B7540047FE90 /* TableVC.swift in Sources */,
 				CDE9B1AB27EC7A3D00BB978A /* EditorDM.swift in Sources */,
+				CDC711F627F2BB560047FE90 /* MyTableViewCell.swift in Sources */,
 				CDE9B1B127EC7AD200BB978A /* EditorVM.swift in Sources */,
 				CD2851F127E9A92D00B94814 /* RootVM.swift in Sources */,
 				CD2851FC27E9CFA100B94814 /* Enums.swift in Sources */,
+				CDC711EE27F1CBFD0047FE90 /* SliderDS.swift in Sources */,
 				CD2851DF27E99F9400B94814 /* SceneDelegate.swift in Sources */,
+				CDC711EC27F1CBEE0047FE90 /* SliderVM.swift in Sources */,
+				CD00841727F428D40015B0CB /* TimeStampVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

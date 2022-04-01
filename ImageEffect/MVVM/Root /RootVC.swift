@@ -17,13 +17,30 @@ class RootVC: UIViewController {
     @IBOutlet weak var saveButton:UIButton!
     @IBOutlet weak var activityIndicator:UIActivityIndicatorView!
     
+    @IBOutlet weak var demoLabel:UILabel!
     //MARK: - Variables
     
     //MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+  
+      
+        
          activateBinding()
-       
+    
+        let quote = "Haters gonna hate"
+
+        let firstAttributes: [NSAttributedString.Key: Any] = [.backgroundColor: UIColor.green, NSAttributedString.Key.kern: 10]
+        let secondAttributes = [NSAttributedString.Key.foregroundColor: UIColor.red]
+
+        let firstString = NSMutableAttributedString(string: "Haters ", attributes: firstAttributes)
+        let secondString = NSAttributedString(string: "gonna ", attributes: secondAttributes)
+        let thirdString = NSAttributedString(string: "hate")
+
+        firstString.append(secondString)
+        firstString.append(thirdString)
+        demoLabel.attributedText = firstString
+        
     }
     //MARK: - Private Methods
     func activateBinding(){
@@ -43,7 +60,7 @@ class RootVC: UIViewController {
         alert.addAction(UIAlertAction(title: "OK", style: .cancel))
         self.present(alert, animated: true, completion: nil)
     }
-    
+   
      
     //MARK: - Action
     @IBAction func hImageDidClicked(sender:UIButton){

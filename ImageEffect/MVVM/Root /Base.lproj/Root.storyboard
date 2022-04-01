@@ -52,6 +52,13 @@
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <color key="color" red="0.89019607840000003" green="0.34901960780000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NMh-gx-lJC">
+                                <rect key="frame" x="69" y="179" width="306" height="79"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -71,6 +78,7 @@
                     <navigationItem key="navigationItem" id="yA8-FD-JQg"/>
                     <connections>
                         <outlet property="activityIndicator" destination="suJ-01-CE2" id="Ayc-Hw-nmG"/>
+                        <outlet property="demoLabel" destination="NMh-gx-lJC" id="nZE-2X-biw"/>
                         <outlet property="hImageButton" destination="KKK-ig-3ub" id="Sm7-Sd-wAb"/>
                         <outlet property="saveButton" destination="0iw-PW-Iya" id="8QG-cr-kBe"/>
                         <outlet property="vImageButton" destination="uIT-b7-4tE" id="olU-iG-9Ku"/>

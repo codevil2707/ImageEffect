@@ -349,8 +349,7 @@ extension UIImage{
                       NSLayoutConstraint(item: child.view!, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: 0),
                       NSLayoutConstraint(item: child.view!, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0),
                       NSLayoutConstraint(item: child.view!, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0),
-                      NSLayoutConstraint(item: child.view!, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: 0),
-                      NSLayoutConstraint(item: child.view as Any, attribute: .height, relatedBy: .equal, toItem: view, attribute: .height, multiplier: 0.3, constant: 0),
+                      NSLayoutConstraint(item: child.view as Any, attribute: .height, relatedBy: .equal, toItem: view, attribute: .height, multiplier: height, constant: 0),
                       
                       
                       

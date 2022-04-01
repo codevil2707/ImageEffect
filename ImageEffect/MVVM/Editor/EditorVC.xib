@@ -11,9 +11,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditorVC" customModule="ImageEffect" customModuleProvider="target">
             <connections>
                 <outlet property="Topview" destination="EFp-XS-O3o" id="7sj-uK-JRG"/>
-                <outlet property="blurButton" destination="fHw-qC-PYt" id="P9T-qR-NvN"/>
+                <outlet property="filterTabBar" destination="gmR-Mc-Sbl" id="pYO-B7-MPb"/>
                 <outlet property="imageLoader" destination="5DS-6D-cvU" id="NCd-Yr-VHk"/>
                 <outlet property="imageView" destination="orp-Ff-bCd" id="1OY-hl-V3l"/>
+                <outlet property="label" destination="7ij-Ml-xIX" id="myo-MO-QfT"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,43 +29,47 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFp-XS-O3o">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="461.5"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="orp-Ff-bCd">
-                                    <rect key="frame" x="41.5" y="92.5" width="331" height="276.5"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="orp-Ff-bCd">
+                                    <rect key="frame" x="59" y="70.5" width="296" height="320.5"/>
                                 </imageView>
                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="5DS-6D-cvU">
                                     <rect key="frame" x="188.5" y="212" width="37" height="37"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="color" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </activityIndicatorView>
-                            </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4D-UD-u62">
-                            <rect key="frame" x="0.0" y="461.5" width="414" height="307.5"/>
-                            <subviews>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHw-qC-PYt">
-                                    <rect key="frame" x="165.5" y="123" width="83" height="61.5"/>
-                                    <color key="backgroundColor" red="0.89019607840000003" green="0.34901960780000002" blue="0.23529411759999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Filters"/>
-                                    <connections>
-                                        <action selector="blurButtonClickedWithSender:" destination="-1" eventType="touchUpInside" id="f3o-30-cpW"/>
-                                    </connections>
-                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ij-Ml-xIX">
+                                    <rect key="frame" x="77" y="50" width="296" height="20.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstItem="fHw-qC-PYt" firstAttribute="width" secondItem="R4D-UD-u62" secondAttribute="width" multiplier="0.2" id="BSy-Gu-isy"/>
-                                <constraint firstItem="fHw-qC-PYt" firstAttribute="centerX" secondItem="R4D-UD-u62" secondAttribute="centerX" id="al1-fX-raI"/>
-                                <constraint firstItem="fHw-qC-PYt" firstAttribute="centerY" secondItem="R4D-UD-u62" secondAttribute="centerY" id="tvY-uP-w1Y"/>
-                                <constraint firstItem="fHw-qC-PYt" firstAttribute="height" secondItem="R4D-UD-u62" secondAttribute="height" multiplier="0.2" id="yt6-qK-ezr"/>
+                                <constraint firstItem="7ij-Ml-xIX" firstAttribute="leading" secondItem="EFp-XS-O3o" secondAttribute="leading" constant="77" id="2kH-zk-GUK"/>
+                                <constraint firstItem="orp-Ff-bCd" firstAttribute="centerX" secondItem="EFp-XS-O3o" secondAttribute="centerX" id="5Te-xh-Wbg"/>
+                                <constraint firstItem="7ij-Ml-xIX" firstAttribute="bottom" secondItem="orp-Ff-bCd" secondAttribute="top" id="7iT-Qo-HJC"/>
+                                <constraint firstItem="orp-Ff-bCd" firstAttribute="width" secondItem="EFp-XS-O3o" secondAttribute="width" multiplier="0.714976" id="AtX-we-wrh"/>
+                                <constraint firstItem="orp-Ff-bCd" firstAttribute="height" secondItem="EFp-XS-O3o" secondAttribute="height" multiplier="0.694475" id="KZw-z2-KRa"/>
+                                <constraint firstAttribute="trailing" secondItem="7ij-Ml-xIX" secondAttribute="trailing" constant="41" id="ZQG-fv-B2j"/>
+                                <constraint firstItem="7ij-Ml-xIX" firstAttribute="width" secondItem="orp-Ff-bCd" secondAttribute="width" id="bp9-Al-XvO"/>
+                                <constraint firstItem="orp-Ff-bCd" firstAttribute="centerY" secondItem="EFp-XS-O3o" secondAttribute="centerY" id="uIr-MC-ewU"/>
+                                <constraint firstItem="7ij-Ml-xIX" firstAttribute="top" secondItem="EFp-XS-O3o" secondAttribute="top" constant="50" id="vKT-1W-Z8H"/>
                             </constraints>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R4D-UD-u62">
+                            <rect key="frame" x="0.0" y="461.5" width="414" height="258.5"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </view>
+                        <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gmR-Mc-Sbl">
+                            <rect key="frame" x="0.0" y="720" width="414" height="49"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <items/>
+                        </tabBar>
                     </subviews>
                     <constraints>
                         <constraint firstItem="EFp-XS-O3o" firstAttribute="height" secondItem="Ho9-dz-TdG" secondAttribute="height" multiplier="0.6" id="md7-1c-vbx"/>
+                        <constraint firstItem="gmR-Mc-Sbl" firstAttribute="height" secondItem="Ho9-dz-TdG" secondAttribute="height" multiplier="0.0637191" id="xQy-cH-u09"/>
                     </constraints>
                 </stackView>
             </subviews>

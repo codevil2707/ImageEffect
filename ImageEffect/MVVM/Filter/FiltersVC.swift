@@ -25,6 +25,7 @@ class FiltersVC: NavigationsViewController {
     override func viewDidLoad() {
         configureCV()
         isRighttNavButtonEnable = true
+        isLeftNavButtonEnable = false
         navBarY = 0
         super.viewDidLoad()
     }
@@ -59,13 +60,16 @@ class FiltersVC: NavigationsViewController {
         return "Done"
     }
     
-    override func didClickedBackButton() {
+    override func didClickednext() {
         self.remove()
     }
     
 }
 extension FiltersVC :  UICollectionViewDelegate, UICollectionViewDataSource{
-    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let indexPath = indexPath.row
+        filtersVM?.getIndex(index: indexPath)
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         let count =  filtersVM?.numberOfFilters()
         return count ?? 0
