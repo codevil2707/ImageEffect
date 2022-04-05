@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Photos
 
 class EditorVM: SliderDelegate, FilterDelegate, TableDelegate, TimeStampDelegate{
     func timeStampDelegate(text: String) {
@@ -24,7 +25,7 @@ class EditorVM: SliderDelegate, FilterDelegate, TableDelegate, TimeStampDelegate
     
     func sliderValueChanged(_ text: String,value: Int) {
         bindLabel?(text)
-        editorDM.currentValue = value
+        updateFilter(CGFloat(value))
     }
     
     //MARK: - DM refrence
@@ -35,6 +36,7 @@ class EditorVM: SliderDelegate, FilterDelegate, TableDelegate, TimeStampDelegate
     var sliderVM:SliderVM? = nil
     var tableVM:TableVM? = nil
     var timeStampVM:TimeStampVM? = nil
+    var shareVM:ShareVM? = nil
    
     //MARK: - Initializer
     init(editorDM:EditorDM){
@@ -45,6 +47,7 @@ class EditorVM: SliderDelegate, FilterDelegate, TableDelegate, TimeStampDelegate
     var imageBinding : ((UIImage?) -> Void)?
     var filterImageBinder: ((UIImage?) -> Void)?
     var imageViewSizeBinder:((CGSize?) -> Void)?
+    var bindFilterImage:  ((UIImage?) -> Void)?
     func loadImageBind(){
         imageBinding?(editorDM.image)
     }
@@ -83,4 +86,30 @@ class EditorVM: SliderDelegate, FilterDelegate, TableDelegate, TimeStampDelegate
         timeStampVM?.delegate = self
         return timeStampVM
     }
+    func addFilter(){
+        let image = editorDM.image?.filteredImage(type: editorDM.filterType.filterType! , value: CGFloat(editorDM.filterType.filtervalue ?? 00))
+   
+           bindFilterImage?(image)
+       }
+    func updateFilter(_ value:CGFloat){
+        let image = editorDM.image?.filteredImage(type: editorDM.filterType.filterType! , value: value)
+           bindFilterImage?(image)
+        editorDM.filterType.filtervalue = Int(value)
+        print(image)
+    }
+    func saveImage(){
+        if let image = editorDM.image?.filteredImage(type: editorDM.filterType.filterType! , value: CGFloat(editorDM.filterType.filtervalue!)){
+        let photos = PHPhotoLibrary.shared()
+        photos.savePhoto(image: image, albumName: "Filter Image", completion: nil)
+        }
+    }
+    
+    func createShareVM()->ShareVM?{
+        guard let image = editorDM.image?.filteredImage(type: editorDM.filterType.filterType! , value: CGFloat(editorDM.filterType.filtervalue!)) else {return nil}
+            let currentDS = ShareDS(image: image)
+            shareVM = ShareVM(currentDS: currentDS)
+            return shareVM
+        
+    }
+    
 }

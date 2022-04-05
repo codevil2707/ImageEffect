@@ -26,10 +26,15 @@ class SliderVM{
     func configureMinMaxValueForSlider(){
         bindMin?(sliderDS.sliderMinValue)
         bindMax?(sliderDS.sliderMaxValue)
-        bindSlider?(currentDM?.currentValue)
+        bindSlider?(currentDM?.filterType.filtervalue)
     }
     func onSliderValueChanged(sliderValue:Float){
         bindSlider?(Int(sliderValue))
+       
+    }
+    func onEndOfSlide(sliderValue:Float){
+        bindSlider?(Int(sliderValue))
         self.delegate?.sliderValueChanged("slider: \(sliderValue)", value: Int(sliderValue))
     }
+  
 }

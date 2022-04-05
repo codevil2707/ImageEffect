@@ -20,6 +20,11 @@
 		CD2851F327E9AB4700B94814 /* RootDM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2851F227E9AB4700B94814 /* RootDM.swift */; };
 		CD2851FC27E9CFA100B94814 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2851FB27E9CFA100B94814 /* Enums.swift */; };
 		CD28520027E9E8CB00B94814 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2851FF27E9E8CB00B94814 /* Extensions.swift */; };
+		CD2EF9FF27FAD06D00090F50 /* Save photo extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EF9FE27FAD06D00090F50 /* Save photo extension.swift */; };
+		CD2EFA0327FB04EB00090F50 /* ShareVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EFA0127FB04EB00090F50 /* ShareVC.swift */; };
+		CD2EFA0427FB04EB00090F50 /* ShareVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CD2EFA0227FB04EB00090F50 /* ShareVC.xib */; };
+		CD2EFA0627FB061D00090F50 /* ShareVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EFA0527FB061D00090F50 /* ShareVM.swift */; };
+		CD2EFA0827FB067700090F50 /* ShareDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD2EFA0727FB067700090F50 /* ShareDS.swift */; };
 		CDC711E927F1BE4A0047FE90 /* SliderVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC711E727F1BE4A0047FE90 /* SliderVC.swift */; };
 		CDC711EA27F1BE4A0047FE90 /* SliderVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = CDC711E827F1BE4A0047FE90 /* SliderVC.xib */; };
 		CDC711EC27F1CBEE0047FE90 /* SliderVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDC711EB27F1CBEE0047FE90 /* SliderVM.swift */; };
@@ -58,6 +63,11 @@
 		CD2851F227E9AB4700B94814 /* RootDM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootDM.swift; sourceTree = "<group>"; };
 		CD2851FB27E9CFA100B94814 /* Enums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
 		CD2851FF27E9E8CB00B94814 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		CD2EF9FE27FAD06D00090F50 /* Save photo extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Save photo extension.swift"; sourceTree = "<group>"; };
+		CD2EFA0127FB04EB00090F50 /* ShareVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareVC.swift; sourceTree = "<group>"; };
+		CD2EFA0227FB04EB00090F50 /* ShareVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ShareVC.xib; sourceTree = "<group>"; };
+		CD2EFA0527FB061D00090F50 /* ShareVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareVM.swift; sourceTree = "<group>"; };
+		CD2EFA0727FB067700090F50 /* ShareDS.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareDS.swift; sourceTree = "<group>"; };
 		CDC711E727F1BE4A0047FE90 /* SliderVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderVC.swift; sourceTree = "<group>"; };
 		CDC711E827F1BE4A0047FE90 /* SliderVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SliderVC.xib; sourceTree = "<group>"; };
 		CDC711EB27F1CBEE0047FE90 /* SliderVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderVM.swift; sourceTree = "<group>"; };
@@ -161,6 +171,7 @@
 		CD2851F727E9B48D00B94814 /* MVVM */ = {
 			isa = PBXGroup;
 			children = (
+				CD2EFA0027FB045B00090F50 /* Share Page */,
 				CD00841427F428A60015B0CB /* Time Stamp */,
 				CDC711EF27F2B6830047FE90 /* My Table */,
 				CDC711E627F1BE1F0047FE90 /* Slider */,
@@ -178,8 +189,20 @@
 				CD2851FB27E9CFA100B94814 /* Enums.swift */,
 				CD2851FF27E9E8CB00B94814 /* Extensions.swift */,
 				CDE9B1C527EF202E00BB978A /* FilterInfo.swift */,
+				CD2EF9FE27FAD06D00090F50 /* Save photo extension.swift */,
 			);
 			path = Utility;
+			sourceTree = "<group>";
+		};
+		CD2EFA0027FB045B00090F50 /* Share Page */ = {
+			isa = PBXGroup;
+			children = (
+				CD2EFA0127FB04EB00090F50 /* ShareVC.swift */,
+				CD2EFA0727FB067700090F50 /* ShareDS.swift */,
+				CD2EFA0527FB061D00090F50 /* ShareVM.swift */,
+				CD2EFA0227FB04EB00090F50 /* ShareVC.xib */,
+			);
+			path = "Share Page";
 			sourceTree = "<group>";
 		};
 		CDC711E627F1BE1F0047FE90 /* Slider */ = {
@@ -296,6 +319,7 @@
 				CDC711F327F2B7540047FE90 /* TableVC.xib in Resources */,
 				CD2851E427E99F9400B94814 /* Root.storyboard in Resources */,
 				CDE9B1B927EDF68F00BB978A /* FiltersVC.xib in Resources */,
+				CD2EFA0427FB04EB00090F50 /* ShareVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -314,6 +338,7 @@
 				CDE9B1B427ED97DB00BB978A /* NavigationsViewController.swift in Sources */,
 				CD2851F327E9AB4700B94814 /* RootDM.swift in Sources */,
 				CDC711E927F1BE4A0047FE90 /* SliderVC.swift in Sources */,
+				CD2EFA0827FB067700090F50 /* ShareDS.swift in Sources */,
 				CDE9B1C427EF18BA00BB978A /* FiltersVM.swift in Sources */,
 				CD2851E127E99F9400B94814 /* RootVC.swift in Sources */,
 				CDE9B1C127EEF17100BB978A /* FiltersCollectionViewCell.swift in Sources */,
@@ -325,10 +350,13 @@
 				CDE9B1B127EC7AD200BB978A /* EditorVM.swift in Sources */,
 				CD2851F127E9A92D00B94814 /* RootVM.swift in Sources */,
 				CD2851FC27E9CFA100B94814 /* Enums.swift in Sources */,
+				CD2EF9FF27FAD06D00090F50 /* Save photo extension.swift in Sources */,
+				CD2EFA0627FB061D00090F50 /* ShareVM.swift in Sources */,
 				CDC711EE27F1CBFD0047FE90 /* SliderDS.swift in Sources */,
 				CD2851DF27E99F9400B94814 /* SceneDelegate.swift in Sources */,
 				CDC711EC27F1CBEE0047FE90 /* SliderVM.swift in Sources */,
 				CD00841727F428D40015B0CB /* TimeStampVC.swift in Sources */,
+				CD2EFA0327FB04EB00090F50 /* ShareVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,7 +505,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2MCAE8CXGC;
+				DEVELOPMENT_TEAM = 7ZAADXAB6L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ImageEffect/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -505,7 +533,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2MCAE8CXGC;
+				DEVELOPMENT_TEAM = 7ZAADXAB6L;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ImageEffect/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

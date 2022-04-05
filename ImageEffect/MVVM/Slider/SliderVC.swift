@@ -21,6 +21,7 @@ class SliderVC: NavigationsViewController{
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     override func viewDidLoad() {
         isRighttNavButtonEnable = true
         isLeftNavButtonEnable = false
@@ -44,9 +45,11 @@ class SliderVC: NavigationsViewController{
             }
         }
        
-       
-        print("sliderVC did load")
+        
+        intensitySlider.addTarget(self, action: #selector(sliderValueChanged(slider:event:)), for: .valueChanged)
     }
+    
+    
     
         override func viewDidLayoutSubviews() {
         print("HEE HEE HAA HAA")
@@ -69,14 +72,29 @@ class SliderVC: NavigationsViewController{
      }
     
     @IBAction func sliderChanged(sender:UISlider){
-        sliderVM?.onSliderValueChanged(sliderValue: sender.value)
+        self.sliderVM?.onSliderValueChanged(sliderValue: sender.value)
     }
-   
+    
+    @objc func sliderValueChanged(slider: UISlider, event: UIEvent){
+        if let touchEvent = event.allTouches?.first {
+               switch touchEvent.phase {
+               case .began:
+                                print("began")
+               case .moved:
+                   self.sliderVM?.onSliderValueChanged(sliderValue: slider.value)
+               case .ended:
+                       self.sliderVM?.onEndOfSlide(sliderValue: slider.value)
+                  
+               default:
+                   break
+               }
+           }
+    }
 
+
+       
 }
-
-
-
+  
 //
 //class parentVm {
 //
@@ -87,6 +105,7 @@ class SliderVC: NavigationsViewController{
 //        return sliderVM
 //    }
 //}
+
 //class parentVC : UIView{
 //    var vm = parentVm()
 //    func pushSLider(){

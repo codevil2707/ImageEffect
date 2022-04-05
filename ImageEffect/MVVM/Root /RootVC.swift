@@ -81,7 +81,7 @@ class RootVC: UIViewController {
     @IBAction func saveDidClicked(sender:UIButton){
         guard let viewModel = rootViewModel.createEditorVM() else {return}
         let editorVC = EditorVC(editorVM: viewModel)
-        self.navigationController?.pushViewController(editorVC, animated: true)
+        self.navigationController?.pushViewController(editorVC, animated: false)
     }
 }
 

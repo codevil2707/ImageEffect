@@ -7,11 +7,12 @@
 
 import UIKit
 
+
 class EditorVC: NavigationsViewController {
     
     //MARK: - Variables
     weak var editorVM:EditorVM?
-    
+    var isDidAppearCall = false
     //MARK: - Outlets
     @IBOutlet weak var imageView:UIImageView!
     @IBOutlet weak var imageLoader:UIActivityIndicatorView!
@@ -31,17 +32,22 @@ class EditorVC: NavigationsViewController {
     
     //MARK: - LifeCycle
     override func viewDidLoad() {
+       
+        isRighttNavButtonEnable = true
         super.viewDidLoad()
         filterTabBar.delegate = self
         configureTabItem()
         configureimageView()
+        self.view.alpha = 0
+// whenever ui is updating ...
         editorVM?.imageBinding = { [weak self] image in
             self?.imageLoader.stopAnimating()
             self?.imageView.image = image
             
         }
+        
       
-        editorVM?.filterImageBinder = {[weak self] image in
+        editorVM?.bindFilterImage = {[weak self] image in
             DispatchQueue.main.async {
                 self?.imageLoader.stopAnimating()
                 self?.imageView.image = image
@@ -55,10 +61,14 @@ class EditorVC: NavigationsViewController {
             self.label.text = text
             
         }
+    
     }
     
-  
-  
+
+//    override func loadView() {
+//        print("hello world")
+//    }
+//  
    
     override func viewWillAppear(_ animated: Bool) {
         imageLoader.startAnimating()
@@ -66,8 +76,16 @@ class EditorVC: NavigationsViewController {
         print("sliderVC willappear ")
     }
     override func viewDidAppear(_ animated: Bool) {
+   
         editorVM?.loadImageBind()
-        print("sliderVC did appear ")
+        if isDidAppearCall == false{
+        imageLoader.startAnimating()
+                DispatchQueue.global().async { [weak self] in
+                    self?.editorVM?.addFilter()
+                  
+                }
+            isDidAppearCall = true
+        }
     }
     override func viewWillLayoutSubviews() {
         editorVM?.calculateSize(width: imageView.frame.width, height: imageView.frame.height)
@@ -83,7 +101,18 @@ class EditorVC: NavigationsViewController {
     override func addTitle() -> String {
         return "Editor"
     }
+    override func didClickedBackButton(){
+        self.navigationController?.popViewController(animated: true)
+    }
    
+    override func rightTitle() -> String? {
+        return "save"
+    }
+    override func didClickednext() {
+        imageLoader.startAnimating()
+           editorVM?.saveImage()
+           openSharePage()
+    }
     //MARK: - Methods
     func configureimageView(){
         imageView.frame = CGRect(x: 0, y: 0, width: self.Topview.frame.width*0.8, height: self.Topview.frame.height*0.8)
@@ -91,10 +120,12 @@ class EditorVC: NavigationsViewController {
     }
 
     override func willMove(toParent: UIViewController?) {
-        print(#function, #line , #file)
+       
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {self.view.alpha = 1}, completion: nil)
     }
     override func didMove(toParent: UIViewController?) {
         print(#function)
+       // UIView.animate(withDuration: 3, delay: 0, options: .curveEaseInOut, animations: {self.view.alpha = 1}, completion: nil)
     }
     
     //MARK: - Actions
@@ -116,7 +147,16 @@ class EditorVC: NavigationsViewController {
 
     }
    
-    // func
+  
+    func openSharePage(){
+        guard let shareVM = editorVM?.createShareVM() else {return}
+        let child = ShareVC(viewModel: shareVM)
+        print("c")
+        self.navigationController?.pushViewController(child, animated: true)
+        print("b")
+       
+        print("a")
+    }
 }
 extension EditorVC :  UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

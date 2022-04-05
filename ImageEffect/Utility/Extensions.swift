@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import CoreImage.CIFilterBuiltins
+import Photos
 
 extension UIImage{
     
@@ -386,25 +387,25 @@ extension UIImage{
 //
 //// You will need this extension :
 //
-//extension UIView {
-//
-//// Using a function since `var image` might conflict with an existing variable
-//// (like on `UIImageView`)
-//func asImage() -> UIImage {
-//if #available(iOS 10.0, *) {
-//  let renderer = UIGraphicsImageRenderer(bounds: bounds)
-//  return renderer.image { rendererContext in
-//    layer.render(in: rendererContext.cgContext)
-//  }
-//} else {
-//  UIGraphicsBeginImageContext(self.frame.size)
-//  self.layer.render(in:UIGraphicsGetCurrentContext()!)
-//  let image = UIGraphicsGetImageFromCurrentImageContext()
-//  UIGraphicsEndImageContext()
-//  return UIImage(cgImage: image!.cgImage!)
-//}
-//}
-//}
+extension UIView {
+
+// Using a function since `var image` might conflict with an existing variable
+// (like on `UIImageView`)
+func asImage() -> UIImage {
+if #available(iOS 10.0, *) {
+  let renderer = UIGraphicsImageRenderer(bounds: bounds)
+  return renderer.image { rendererContext in
+    layer.render(in: rendererContext.cgContext)
+  }
+} else {
+  UIGraphicsBeginImageContext(self.frame.size)
+  self.layer.render(in:UIGraphicsGetCurrentContext()!)
+  let image = UIGraphicsGetImageFromCurrentImageContext()
+  UIGraphicsEndImageContext()
+  return UIImage(cgImage: image!.cgImage!)
+}
+}
+}
 
 
 func calculateNewWeidthAndHeight(_ avilableFrameWidth:CGFloat,_ avilableFrameHeight:CGFloat,_ avilableImageWidth:CGFloat,_ avilableImageHeight:CGFloat)->CGSize{
@@ -433,3 +434,15 @@ func calculateNewWeidthAndHeight(_ avilableFrameWidth:CGFloat,_ avilableFrameHei
     return CGSize(width: finalImageWidth, height: finalImageHeight)
 }
 
+//func saveAssset(){
+//    [[PHPhotoLibrary, sharedPhotoLibrary], performChanges:^{
+//        [PHAssetChangeRequest creationRequestForAssetFromImage:[info valueForKey:UIImagePickerControllerOriginalImage]];
+//    } completionHandler:^(BOOL success, NSError *error) {
+//        if (success) {
+//             NSLog(@"Success");
+//        }
+//        else {
+//            NSLog(@"write error : %@",error);
+//        }
+//    }]
+//}
